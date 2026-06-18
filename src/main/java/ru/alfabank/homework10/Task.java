@@ -32,18 +32,25 @@ class Task {
         }
     }
 
-    public void showInfo() {
+    public boolean showInfo() {
         if (status.equalsIgnoreCase("выполнена")) {
             System.out.printf("Задача %s: выполнена. Ты молодец!", name);
         }
         else {
             System.out.printf("Задача %s: не выполнена. Пора за работу!", name);
         }
+        return false;
     }
 
     public String getName() {
         return name;
     }
 
-
+    @Override
+    public String toString() {
+        return "Task{" +
+                "name='" + name + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
 }
