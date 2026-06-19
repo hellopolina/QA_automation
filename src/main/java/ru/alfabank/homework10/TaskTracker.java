@@ -16,7 +16,7 @@ public class TaskTracker {
         tasks.add(task);
         totalTasks++;
         openedTasks++;
-        System.out.printf("Задача %s добавлена", task.getName());
+        System.out.printf("Задача \"%s\" добавлена \n", task.getName());
     }
 
     public void printAllTasks() {
@@ -39,9 +39,11 @@ public class TaskTracker {
     }
 
     public void completeTask(String name) {
+        System.out.printf("Выполняем задачу \"%s\"... \n", name);
         for (Task task: tasks) {
             if (task.getName().equalsIgnoreCase(name)) {
                 task.resolveTask();
+                System.out.printf("Задача \"%s\" выполнена!\n", name);
                 completedTasks++;
                 openedTasks--;
             }

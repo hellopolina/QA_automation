@@ -10,17 +10,16 @@ class Task {
     }
 
     public void resolveTask() {
-        isDone = true;
+        this.isDone = true;
     }
 
     public boolean getStatus() {
-        System.out.printf("Статус задачи %s: %b", name, isDone);
         return isDone;
     }
 
     public void printInfo() {
-        String status = isDone ? " - выполнена. Ты молодец!" : " - не выполнена. Пора за работу!";
-        System.out.println(name + status);
+        String status = getStatus() ? " - выполнена. Ты молодец!" : " - не выполнена. Пора за работу!";
+        System.out.println("Задача \"" + name + "\"" + status);
     }
 
     public String getName() {
