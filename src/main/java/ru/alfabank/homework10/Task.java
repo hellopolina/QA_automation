@@ -32,7 +32,7 @@ class Task {
         }
     }
 
-    public boolean showInfo() {
+    public boolean printInfo() {
         if (status.equalsIgnoreCase("выполнена")) {
             System.out.printf("Задача %s: выполнена. Ты молодец!", name);
         }

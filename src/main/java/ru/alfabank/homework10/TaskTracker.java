@@ -3,13 +3,16 @@ package ru.alfabank.homework10;
 import java.util.ArrayList;
 
 public class TaskTracker {
-    ArrayList<Task> tasks = new ArrayList<>();
+    private ArrayList<Task> tasks;
     int totalTasks;
     int completedTasks;
     int openedTasks;
 
+    public TaskTracker() {
+        this.tasks = new ArrayList<>();
+    }
 
-    public void addTaskInList(Task task) {
+    public void addTask(Task task) {
         tasks.add(task);
         totalTasks++;
         openedTasks++;
@@ -18,16 +21,16 @@ public class TaskTracker {
 
     public void printAllTasks() {
         for (Task task: tasks) {
-            System.out.println(task);
+            task.printInfo();
         }
     }
 
-    public void findTaskByName(String name) {
+    public void findTask(String name) {
         boolean isTaskFound = false;
         for (Task task: tasks) {
             if (task.getName().equalsIgnoreCase(name)) {
                 isTaskFound = true;
-                System.out.println(task.showInfo());
+                task.printInfo();
             }
         }
         if (!isTaskFound) {
@@ -35,7 +38,7 @@ public class TaskTracker {
         }
     }
 
-    public void completeTaskByName(String name) {
+    public void completeTask(String name) {
         for (Task task: tasks) {
             if (task.getName().equalsIgnoreCase(name)) {
                 task.resolveTask();
