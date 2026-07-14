@@ -82,12 +82,12 @@ public class SquadManager {
         Iterator<String> iterator = squad.iterator();
 
         while (iterator.hasNext()) {
-            if (iterator.next().contains("Трус")) {
+            if (iterator.next().startsWith("Трус")) {
                 iterator.remove();
             }
         }
 
-//        squad.removeIf(x -> x.contains("Трус"));
+//        squad.removeIf(x -> x.startWith("Трус"));
 
         System.out.println("Отряд после фильтрации:");
         for(String name: squad) {

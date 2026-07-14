@@ -13,10 +13,11 @@ public class AssaultQueue {
         queue.add(name);
     }
 
-    public void retreatCoward() {
+    public String retreatCoward() {
         String first = queue.getFirst();
-        queue.removeIf(x -> x.contains(first));
+        queue.removeFirst();
         System.out.printf("Штурмовик %s вышел из очереди \n", first);
+        return first;
     }
 
     public void printQueue() {
